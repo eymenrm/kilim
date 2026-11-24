@@ -1,0 +1,10 @@
+#!/bin/sh
+# Kilim kuralı: commit mesajlarında Claude imzası bulunmaz.
+# Co-Authored-By (Claude/Anthropic), Claude-Session ve "Generated with Claude" satırlarını siler.
+# Yeni bir kopyada bir kez çalıştırın: git config core.hooksPath .githooks
+mesaj="$1"
+gecici="$(mktemp)"
+grep -viE '^[[:space:]]*(co-authored-by:.*(claude|anthropic)|claude-session:)|generated with \[?claude' "$mesaj" > "$gecici"
+cat "$gecici" > "$mesaj"
+rm -f "$gecici"
+exit 0

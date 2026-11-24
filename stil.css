@@ -1,0 +1,43 @@
+/* Kilim — ortak stil. Renkler markalar/kilim/marka.yaml ile aynı. Dış yazı tipi ya da izleyici yok. */
+:root {
+  --zemin: #F2E8D5;
+  --murekkep: #1E1B18;
+  --civit: #22344A;
+  --kokboya: #9E2B25;
+  --altin: #B08D57;
+  --baslik: "Cardo", Georgia, "Times New Roman", serif;
+  --metin: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--zemin); color: var(--murekkep); }
+body {
+  margin: 0;
+  font-family: var(--metin);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.kenar {
+  height: 18px;
+  background-color: var(--civit);
+  background-image:
+    linear-gradient(45deg, transparent 37%, var(--kokboya) 37%, var(--kokboya) 63%, transparent 63%),
+    linear-gradient(-45deg, transparent 37%, var(--kokboya) 37%, var(--kokboya) 63%, transparent 63%);
+  background-size: 18px 18px;
+  background-position: center;
+}
+main { max-width: 720px; margin: 0 auto; padding: 56px 24px 40px; }
+h1, h2, h3 { font-family: var(--baslik); font-weight: 700; line-height: 1.2; }
+h1 { font-size: 44px; margin: 0 0 8px; }
+h2 { font-size: 26px; margin: 40px 0 8px; color: var(--civit); }
+h3 { font-size: 19px; margin: 28px 0 4px; }
+.alt-baslik { font-family: var(--baslik); font-size: 21px; color: var(--kokboya); margin: 0 0 32px; }
+a { color: var(--kokboya); text-underline-offset: 3px; }
+a:hover { color: var(--civit); }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+.tarih { color: #5b534a; font-size: 15px; }
+.ayrac { border: 0; border-top: 1px solid var(--altin); margin: 48px 0; }
+.dil { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--altin); margin: 0 0 4px; }
+footer { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; font-size: 15px; color: #5b534a; }
+footer a { margin-right: 16px; }
+@media (max-width: 520px) { h1 { font-size: 34px; } main { padding-top: 40px; } }
